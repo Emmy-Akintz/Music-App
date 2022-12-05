@@ -10,7 +10,7 @@ import PlayBar from './components/PlayBar';
 
 function App() {
   return (
-    <div className="App bg-gray-800 text-white">
+    <div className="App bg-gray-800 text-white h-[100vh]">
       <Routes>
         <Route path = '/' element={<Home />} />
         <Route path = '/ms' element={<MusicSearch />} />
