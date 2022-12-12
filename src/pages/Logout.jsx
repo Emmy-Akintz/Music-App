@@ -7,7 +7,7 @@ function Logout() {
         <div className="">
             <Navbar />
             <button className="text-white font-bold text-xl border-none rounded-xl bg-yellow-400 p-4 hover:bg-yellow-500 transition-all mb-20">
-                <Link to=''>Log Out</Link>
+                <Link to=''>Disconnect Wallet</Link>
             </button>
         </div>
     )
