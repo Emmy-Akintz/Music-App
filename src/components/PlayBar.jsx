@@ -1,9 +1,11 @@
 import React from 'react'
+import { useState } from 'react'
 import { IconContext } from 'react-icons'
-import { FaBackward, FaForward, FaPlayCircle, FaRandom, FaVolumeUp } from 'react-icons/fa'
+import { FaBackward, FaForward, FaPauseCircle, FaPlayCircle, FaRandom, FaVolumeUp } from 'react-icons/fa'
 import { MdRepeatOne } from 'react-icons/md'
 
 function PlayBar() {
+    const [playPause, setPlayPause] = useState(false)
   return (
     <div className='fixed justify-center justify-between flex bottom-0 w-full text-white bg-gray-900 border-t border-gray-500 p-4 my-auto'>
         <div className="flex">
@@ -15,7 +17,10 @@ function PlayBar() {
         </div>
         <div className="my-auto flex lg:hidden">
                 <IconContext.Provider value={{ className: 'text-3xl', color:'yellow' }}>
-                    <FaPlayCircle className='mb-0.5' />
+                    <FaPlayCircle className={playPause ? 'hidden mb-0.5' : 'block'} onClick={()=>setPlayPause(!playPause)} />
+                </IconContext.Provider>
+                <IconContext.Provider value={{ className: 'text-3xl', color:'yellow' }}>
+                    <FaPauseCircle className={playPause ? 'block mb-0.5' : 'hidden'} onClick={()=>setPlayPause(false)} />
                 </IconContext.Provider>
                 <IconContext.Provider value={{ color:'white' }}>
                     <FaForward className='ml-8 mt-1' />
@@ -30,7 +35,10 @@ function PlayBar() {
                     <FaBackward className='mt-1' />
                 </IconContext.Provider>
                 <IconContext.Provider value={{ className: 'text-3xl', color:'yellow' }}>
-                    <FaPlayCircle className='mb-0.5' />
+                    <FaPlayCircle className={playPause ? 'mb-0.5 hidden' : 'block'} onClick={()=>setPlayPause(!playPause)} />
+                </IconContext.Provider>
+                <IconContext.Provider value={{ className: 'text-3xl', color:'yellow' }}>
+                    <FaPauseCircle className={playPause ? 'mb-0.5 block' : 'hidden'} onClick={()=>setPlayPause(false)} />
                 </IconContext.Provider>
                 <IconContext.Provider value={{ color:'white' }}>
                     <FaForward className='mt-1' />
