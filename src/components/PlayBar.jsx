@@ -64,3 +64,4 @@ function PlayBar() {
 }
 
 export default PlayBar
+// export {playPause, setPlayPause}

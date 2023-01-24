@@ -36,3 +36,13 @@
     transform: rotate(360deg);
   }
 }
+
+/* style for hover play button */
+.card .card-button {
+  display: none;
+}
+
+.card:hover .card-button {
+  display: block;
+  transform: .5s;
+}
